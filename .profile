@@ -1,4 +1,5 @@
-export PATH=/opt/local/bin:/opt/local/sbin:/Users/eng/.rvm/bin:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/Users/eng/.rvm/bin:$PATH
+
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ →\ \1/'
 }
@@ -20,3 +21,5 @@ alias ga='git add .'
 alias gc='git commit -a'
 alias gcp='git add . && git commit -a && git push'
 alias qd="git add . && git commit -a -m 'bump' && git push && cap deploy"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
